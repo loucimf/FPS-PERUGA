@@ -8,7 +8,7 @@ public class FallScript : MonoBehaviour
 {
     public TextMeshProUGUI looseText;
     public float deathDistance = -3f;
-    public float reloadDelay = -7f;
+    public float reloadDelay = 2f;
 
     void Start()
     {
