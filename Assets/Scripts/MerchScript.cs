@@ -16,7 +16,10 @@ public class MerchScript : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
             manager.UpdateMoney(-price);
+            Debug.Log("Player!!!");
             Destroy(gameObject);
+        } else {
+            Debug.Log("Not player");
         }
     }
 }
