@@ -20,7 +20,6 @@ public class FallScript : MonoBehaviour
         if (transform.position.y < deathDistance)
         {
             looseText.enabled = true;
-            //SceneManager.LoadScene("FPS Parkour");
             Debug.Log("Respawn!");
             StartCoroutine(ReloadSceneAfterDelay());
         } else
