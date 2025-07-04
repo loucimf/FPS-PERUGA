@@ -12,7 +12,7 @@ public class UIManagerScript : MonoBehaviour
         moneyTextMesh.text = money;
     }
 
-    public void UpdateHealthPoints(string healthPoints)
+    public void UpdateHealthText(string healthPoints)
     {
         healthTextMesh.text = healthPoints;
     }

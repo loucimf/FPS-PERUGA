@@ -7,12 +7,12 @@ using UnityEngine.SceneManagement;
 public class FallScript : MonoBehaviour
 {
     public TextMeshProUGUI looseText;
-    public float deathDistance = -3f;
+    public float deathDistance = -4f;
     public float reloadDelay = 2f;
 
     void Start()
     {
-        
+        looseText.enabled = false;
     }
 
     void Update()
@@ -20,17 +20,20 @@ public class FallScript : MonoBehaviour
         if (transform.position.y < deathDistance)
         {
             looseText.enabled = true;
-            Debug.Log("Respawn!");
             StartCoroutine(ReloadSceneAfterDelay());
-        } else
-        {
-            looseText.enabled = false;
-        }
+        } 
     }
 
+    public void LooseReloadScene()
+    {
+        looseText.enabled = true;
+        StartCoroutine(ReloadSceneAfterDelay());
+    }
+    
     IEnumerator ReloadSceneAfterDelay()
     {
         yield return new WaitForSeconds(reloadDelay);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        looseText.enabled = false;
     }
 }
