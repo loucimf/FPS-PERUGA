@@ -7,7 +7,12 @@ public class DamageScript : MonoBehaviour
     public HealthManagerScript healthManager;
     public FallScript fallScript;
 
-    
+    private void Start()
+    {
+        healthManager = FindFirstObjectByType<HealthManagerScript>();
+        fallScript = FindFirstObjectByType<FallScript>();
+    }
+
     public void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.CompareTag("Player"))
