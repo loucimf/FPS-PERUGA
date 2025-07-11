@@ -16,6 +16,7 @@ public class HealthManagerScript : MonoBehaviour
 
         if (resultPoints <= 0)
         {
+            uiManager.UpdateHealthText("0");
             return false;
         }
         

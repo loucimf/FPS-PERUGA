@@ -14,6 +14,7 @@ public class MoneyManager : MonoBehaviour
     {
         if (playerMoney + amount < 0)
         {
+            StartCoroutine(uiManager.ShowPopup("No money!!!"));
             return false;
         }
         
